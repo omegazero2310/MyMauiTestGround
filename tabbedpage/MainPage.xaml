@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="tabbedpage.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:local="clr-namespace:tabbedpage"
+    NavigationPage.HasNavigationBar="False"
+    android:TabbedPage.ToolbarPlacement="Bottom">
+    <TabbedPage.Children>
+        <local:NewPage1 Title="Test 1" IconImageSource="dotnet_bot.png" />
+        <local:NewPage2 Title="Test 2" IconImageSource="dotnet_bot.png" />
+    </TabbedPage.Children>
+</TabbedPage>
