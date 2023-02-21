@@ -62,4 +62,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Platforms\iOS\Services\" />
+	</ItemGroup>
+
 </Project>

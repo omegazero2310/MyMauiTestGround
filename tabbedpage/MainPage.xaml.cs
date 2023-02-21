@@ -10,6 +10,7 @@ namespace tabbedpage
     public partial class MainPage : TabbedPage
     {
         int TabBarHeight;
+        const float CustomTabBarHeight = 60.0f;
         public MainPage()
         {
             InitializeComponent();
@@ -57,6 +58,15 @@ namespace tabbedpage
             }
 #elif IOS
             var rootView = UIApplication.SharedApplication.KeyWindow.RootViewController;
+            foreach(var view in rootView.ChildViewControllers)
+            {
+                if(view is UITabBarController tabController)
+                {
+                    //var tabBarFrame = tabController.TabBar.Frame;
+                    //var diff = CustomTabBarHeight - tabBarFrame.Height;
+                    tabController.TabBar.Hidden = obj;
+                }
+            }
 #endif
         }
     }
