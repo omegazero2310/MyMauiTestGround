@@ -79,30 +79,26 @@ namespace tabbedpage
             void FindAndHideTabbar(UIViewController views)
             {
                 if (views is UITabBarController tabControllerview)
-                    {
-                        //var tabBarFrame = tabController.TabBar.Frame;
-                        //var diff = CustomTabBarHeight - tabBarFrame.Height;
-                        tabControllerview.TabBar.Hidden = obj;
-                    }
-                    else
-                    {
-                    foreach (var uiView in views.ChildViewControllers)
                 {
-                    if (uiView is UITabBarController tabController)
+                    tabControllerview.TabBar.Hidden = obj;
+                }
+                else
+                {
+                    foreach (var uiView in views.ChildViewControllers)
                     {
-                        //var tabBarFrame = tabController.TabBar.Frame;
-                        //var diff = CustomTabBarHeight - tabBarFrame.Height;
-                        tabController.TabBar.Hidden = obj;
-                    }
-                    else
-                    {
-                        if (uiView.ChildViewControllers?.Length > 0)
+                        if (uiView is UITabBarController tabController)
                         {
-                            FindAndHideTabbar(uiView);
+                            tabController.TabBar.Hidden = obj;
+                        }
+                        else
+                        {
+                            if (uiView.ChildViewControllers?.Length > 0)
+                            {
+                                FindAndHideTabbar(uiView);
+                            }
                         }
                     }
                 }
-                    }
                 
             }
 #endif
